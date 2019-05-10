@@ -1,5 +1,7 @@
 const creepLimit = {
-  harvester: 3
+  harvester: 2,
+  builder: 1,
+  upgrader: 1
 }
 
 function getNumberOfScreepsWithRole (role) {
@@ -32,7 +34,7 @@ var spawnManager = {
   run: function () {
     for (let spawnName in Game.spawns) {
       const spawn = Game.spawns[spawnName]
-      for (let role of ['harvester']) {
+      for (let role of ['harvester', 'builder', 'upgrader']) {
         let count = getNumberOfScreepsWithRole(role)
         if (count < creepLimit[role]) {
           let toSpawn = [MOVE, WORK, CARRY]
