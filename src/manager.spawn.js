@@ -1,5 +1,5 @@
 const creepLimit = {
-  harvester: 5
+  harvester: 1
 }
 
 function getNumberOfScreepsWithRole (role) {
