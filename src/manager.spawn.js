@@ -1,5 +1,5 @@
 const creepLimit = {
-  harverster: 5
+  harvester: 5
 }
 
 function getNumberOfScreepsWithRole (role) {
@@ -36,10 +36,13 @@ var spawnManager = {
         let count = getNumberOfScreepsWithRole(role)
         if (count < creepLimit[role]) {
           let toSpawn = [MOVE, WORK, CARRY]
+
           if (spawn.energy >= getCostOf(toSpawn)) {
             let name = generateCreepName(role)
             spawn.spawnCreep(toSpawn, name, {
-              role
+              memory: {
+                role
+              }
             })
           }
         }
