@@ -1,5 +1,5 @@
-var spawnManager = require('manager/spawn')
-var roleHarvester = require('role/harvester')
+var spawnManager = require('manager.spawn')
+var roleHarvester = require('role.harvester')
 
 module.exports.loop = function () {
   spawnManager.run()
